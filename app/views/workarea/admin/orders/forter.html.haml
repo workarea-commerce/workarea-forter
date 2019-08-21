@@ -1,0 +1,57 @@
+- @page_title = t('workarea.admin.orders.forter.page_title', id: @order.id)
+
+.view
+  .view__header
+    .grid.grid--middle.grid--right
+      .grid__cell.grid__cell--50
+        .view__heading
+          = link_to_index_for(@order)
+          %h1= link_to @order.name, url_for(@order)
+      .grid__cell.grid__cell--25
+        = render_aux_navigation_for(@order)
+
+  .view__container
+    = render_cards_for(@order, :forter)
+
+  .view__container.view__container--narrow
+    .grid
+      .grid__cell.grid__cell--50
+        %h2= t('workarea.admin.orders.forter.title')
+        %ul.list-reset
+
+        %li
+          %strong= t('workarea.admin.orders.forter.status')
+          = @order.decision.external_order_status
+        %li
+          %br
+          %strong= link_to t('workarea.admin.orders.forter.console'), "https://portal.forter.com/dashboard/#{@order.id}"
+
+      .grid__cell.grid__cell--50
+        %h2= t('workarea.admin.orders.forter.details_heading')
+
+        %p= t('workarea.admin.orders.forter.details_description')
+
+        %table
+          %thead
+            %tr
+              %th= t('workarea.admin.orders.forter.details.action')
+              %th= t('workarea.admin.orders.forter.details.message')
+              %th= t('workarea.admin.orders.forter.details.reason_code')
+              %th= t('workarea.admin.orders.forter.details.decision_error')
+              %th= t('workarea.admin.orders.forter.error')
+
+          %tbody
+            - @order.decision.responses.each do |response|
+              %tr
+                %td= response.fraud_decision_action
+                %td= response.decision_response&.body_message
+                %td= response.decision_response&.reason_code
+                %td
+                  -if response.decision_response&.errors.present?
+                    - response.decision_response.errors.each do |e|
+                      %li= e["message"]
+                %td= response.error
+
+
+
+

@@ -1,0 +1,410 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://apitest.authorize.net/xml/v1/request.api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <createCustomerProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <merchantAuthentication>
+            <name>a</name>
+            <transactionKey>b</transactionKey>
+          </merchantAuthentication>
+          <profile>
+            <email>user@workarea.com</email>
+          </profile>
+        </createCustomerProfileRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Opnet-Transaction-Trace:
+      - a2_a172c952-0831-4b38-8dd7-14ea60d7731c-20404-24738466
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method,SOAPAction
+      Access-Control-Allow-Methods:
+      - PUT,OPTIONS,POST,GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cnection:
+      - close
+      Content-Length:
+      - '503'
+      Date:
+      - Wed, 23 Jan 2019 21:47:49 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Y3JlYXRlQ3VzdG9tZXJQcm9maWxlUmVzcG9uc2UgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9IkFuZXRBcGkveG1sL3YxL3NjaGVtYS9BbmV0QXBpU2NoZW1hLnhzZCI+PG1lc3NhZ2VzPjxyZXN1bHRDb2RlPkVycm9yPC9yZXN1bHRDb2RlPjxtZXNzYWdlPjxjb2RlPkUwMDAzOTwvY29kZT48dGV4dD5BIGR1cGxpY2F0ZSByZWNvcmQgd2l0aCBJRCAxODEzODc3NzkzIGFscmVhZHkgZXhpc3RzLjwvdGV4dD48L21lc3NhZ2U+PC9tZXNzYWdlcz48Y3VzdG9tZXJQYXltZW50UHJvZmlsZUlkTGlzdCAvPjxjdXN0b21lclNoaXBwaW5nQWRkcmVzc0lkTGlzdCAvPjx2YWxpZGF0aW9uRGlyZWN0UmVzcG9uc2VMaXN0IC8+PC9jcmVhdGVDdXN0b21lclByb2ZpbGVSZXNwb25zZT4=
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 21:47:49 GMT
+- request:
+    method: post
+    uri: https://apitest.authorize.net/xml/v1/request.api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <getCustomerProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <merchantAuthentication>
+            <name>a</name>
+            <transactionKey>b</transactionKey>
+          </merchantAuthentication>
+          <customerProfileId>1813877793</customerProfileId>
+        </getCustomerProfileRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Opnet-Transaction-Trace:
+      - a2_23d718fd-f5f2-4530-862c-f27db0135530-14504-24746966
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method,SOAPAction
+      Access-Control-Allow-Methods:
+      - PUT,OPTIONS,POST,GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cnection:
+      - close
+      Content-Length:
+      - '895'
+      Date:
+      - Wed, 23 Jan 2019 21:47:49 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Z2V0Q3VzdG9tZXJQcm9maWxlUmVzcG9uc2UgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9IkFuZXRBcGkveG1sL3YxL3NjaGVtYS9BbmV0QXBpU2NoZW1hLnhzZCI+PG1lc3NhZ2VzPjxyZXN1bHRDb2RlPk9rPC9yZXN1bHRDb2RlPjxtZXNzYWdlPjxjb2RlPkkwMDAwMTwvY29kZT48dGV4dD5TdWNjZXNzZnVsLjwvdGV4dD48L21lc3NhZ2U+PC9tZXNzYWdlcz48cHJvZmlsZT48ZW1haWw+dXNlckB3b3JrYXJlYS5jb208L2VtYWlsPjxjdXN0b21lclByb2ZpbGVJZD4xODEzODc3NzkzPC9jdXN0b21lclByb2ZpbGVJZD48cGF5bWVudFByb2ZpbGVzPjxiaWxsVG8+PGZpcnN0TmFtZT5CZW48L2ZpcnN0TmFtZT48bGFzdE5hbWU+Q3JvdXNlPC9sYXN0TmFtZT48YWRkcmVzcz4yMiBzLiAzcmQgc3QuPC9hZGRyZXNzPjxjaXR5PlBoaWxhZGVscGhpYTwvY2l0eT48c3RhdGU+UEE8L3N0YXRlPjx6aXA+MTkxMDY8L3ppcD48Y291bnRyeT5Vbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2E8L2NvdW50cnk+PC9iaWxsVG8+PGN1c3RvbWVyUGF5bWVudFByb2ZpbGVJZD4xODA4NTg4NjczPC9jdXN0b21lclBheW1lbnRQcm9maWxlSWQ+PHBheW1lbnQ+PGNyZWRpdENhcmQ+PGNhcmROdW1iZXI+WFhYWDExMTE8L2NhcmROdW1iZXI+PGV4cGlyYXRpb25EYXRlPlhYWFg8L2V4cGlyYXRpb25EYXRlPjxjYXJkVHlwZT5WaXNhPC9jYXJkVHlwZT48L2NyZWRpdENhcmQ+PC9wYXltZW50PjwvcGF5bWVudFByb2ZpbGVzPjwvcHJvZmlsZT48L2dldEN1c3RvbWVyUHJvZmlsZVJlc3BvbnNlPg==
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 21:47:49 GMT
+- request:
+    method: post
+    uri: https://apitest.authorize.net/xml/v1/request.api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <getCustomerProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <merchantAuthentication>
+            <name>a</name>
+            <transactionKey>b</transactionKey>
+          </merchantAuthentication>
+          <customerProfileId>1813877793</customerProfileId>
+        </getCustomerProfileRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Opnet-Transaction-Trace:
+      - a2_a172c952-0831-4b38-8dd7-14ea60d7731c-20404-24738486
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method,SOAPAction
+      Access-Control-Allow-Methods:
+      - PUT,OPTIONS,POST,GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cnection:
+      - close
+      Content-Length:
+      - '895'
+      Date:
+      - Wed, 23 Jan 2019 21:47:50 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Z2V0Q3VzdG9tZXJQcm9maWxlUmVzcG9uc2UgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9IkFuZXRBcGkveG1sL3YxL3NjaGVtYS9BbmV0QXBpU2NoZW1hLnhzZCI+PG1lc3NhZ2VzPjxyZXN1bHRDb2RlPk9rPC9yZXN1bHRDb2RlPjxtZXNzYWdlPjxjb2RlPkkwMDAwMTwvY29kZT48dGV4dD5TdWNjZXNzZnVsLjwvdGV4dD48L21lc3NhZ2U+PC9tZXNzYWdlcz48cHJvZmlsZT48ZW1haWw+dXNlckB3b3JrYXJlYS5jb208L2VtYWlsPjxjdXN0b21lclByb2ZpbGVJZD4xODEzODc3NzkzPC9jdXN0b21lclByb2ZpbGVJZD48cGF5bWVudFByb2ZpbGVzPjxiaWxsVG8+PGZpcnN0TmFtZT5CZW48L2ZpcnN0TmFtZT48bGFzdE5hbWU+Q3JvdXNlPC9sYXN0TmFtZT48YWRkcmVzcz4yMiBzLiAzcmQgc3QuPC9hZGRyZXNzPjxjaXR5PlBoaWxhZGVscGhpYTwvY2l0eT48c3RhdGU+UEE8L3N0YXRlPjx6aXA+MTkxMDY8L3ppcD48Y291bnRyeT5Vbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2E8L2NvdW50cnk+PC9iaWxsVG8+PGN1c3RvbWVyUGF5bWVudFByb2ZpbGVJZD4xODA4NTg4NjczPC9jdXN0b21lclBheW1lbnRQcm9maWxlSWQ+PHBheW1lbnQ+PGNyZWRpdENhcmQ+PGNhcmROdW1iZXI+WFhYWDExMTE8L2NhcmROdW1iZXI+PGV4cGlyYXRpb25EYXRlPlhYWFg8L2V4cGlyYXRpb25EYXRlPjxjYXJkVHlwZT5WaXNhPC9jYXJkVHlwZT48L2NyZWRpdENhcmQ+PC9wYXltZW50PjwvcGF5bWVudFByb2ZpbGVzPjwvcHJvZmlsZT48L2dldEN1c3RvbWVyUHJvZmlsZVJlc3BvbnNlPg==
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 21:47:50 GMT
+- request:
+    method: post
+    uri: https://apitest.authorize.net/xml/v1/request.api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <getCustomerPaymentProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <merchantAuthentication>
+            <name>a</name>
+            <transactionKey>b</transactionKey>
+          </merchantAuthentication>
+          <customerProfileId>1813877793</customerProfileId>
+          <customerPaymentProfileId>1808588673</customerPaymentProfileId>
+        </getCustomerPaymentProfileRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Opnet-Transaction-Trace:
+      - a2_a172c952-0831-4b38-8dd7-14ea60d7731c-20404-24738496
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method,SOAPAction
+      Access-Control-Allow-Methods:
+      - PUT,OPTIONS,POST,GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cnection:
+      - close
+      Content-Length:
+      - '856'
+      Date:
+      - Wed, 23 Jan 2019 21:47:50 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Z2V0Q3VzdG9tZXJQYXltZW50UHJvZmlsZVJlc3BvbnNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zPSJBbmV0QXBpL3htbC92MS9zY2hlbWEvQW5ldEFwaVNjaGVtYS54c2QiPjxtZXNzYWdlcz48cmVzdWx0Q29kZT5PazwvcmVzdWx0Q29kZT48bWVzc2FnZT48Y29kZT5JMDAwMDE8L2NvZGU+PHRleHQ+U3VjY2Vzc2Z1bC48L3RleHQ+PC9tZXNzYWdlPjwvbWVzc2FnZXM+PHBheW1lbnRQcm9maWxlPjxiaWxsVG8+PGZpcnN0TmFtZT5CZW48L2ZpcnN0TmFtZT48bGFzdE5hbWU+Q3JvdXNlPC9sYXN0TmFtZT48YWRkcmVzcz4yMiBzLiAzcmQgc3QuPC9hZGRyZXNzPjxjaXR5PlBoaWxhZGVscGhpYTwvY2l0eT48c3RhdGU+UEE8L3N0YXRlPjx6aXA+MTkxMDY8L3ppcD48Y291bnRyeT5Vbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2E8L2NvdW50cnk+PC9iaWxsVG8+PGN1c3RvbWVyUHJvZmlsZUlkPjE4MTM4Nzc3OTM8L2N1c3RvbWVyUHJvZmlsZUlkPjxjdXN0b21lclBheW1lbnRQcm9maWxlSWQ+MTgwODU4ODY3MzwvY3VzdG9tZXJQYXltZW50UHJvZmlsZUlkPjxwYXltZW50PjxjcmVkaXRDYXJkPjxjYXJkTnVtYmVyPlhYWFgxMTExPC9jYXJkTnVtYmVyPjxleHBpcmF0aW9uRGF0ZT5YWFhYPC9leHBpcmF0aW9uRGF0ZT48Y2FyZFR5cGU+VmlzYTwvY2FyZFR5cGU+PC9jcmVkaXRDYXJkPjwvcGF5bWVudD48L3BheW1lbnRQcm9maWxlPjwvZ2V0Q3VzdG9tZXJQYXltZW50UHJvZmlsZVJlc3BvbnNlPg==
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 21:47:50 GMT
+- request:
+    method: post
+    uri: https://apitest.authorize.net/xml/v1/request.api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <updateCustomerPaymentProfileRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <merchantAuthentication>
+            <name>a</name>
+            <transactionKey>b</transactionKey>
+          </merchantAuthentication>
+          <customerProfileId>1813877793</customerProfileId>
+          <paymentProfile>
+            <billTo>
+              <firstName>Ben</firstName>
+              <lastName>Crouse</lastName>
+              <company/>
+              <address>22 s. 3rd st.</address>
+              <city>Philadelphia</city>
+              <state>PA</state>
+              <zip>19106</zip>
+              <country>United States of America</country>
+            </billTo>
+            <payment>
+              <creditCard>
+                <cardNumber>XXXX1111</cardNumber>
+                <expirationDate>2020-01</expirationDate>
+                <cardCode>999</cardCode>
+              </creditCard>
+            </payment>
+            <customerPaymentProfileId>1808588673</customerPaymentProfileId>
+          </paymentProfile>
+        </updateCustomerPaymentProfileRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Opnet-Transaction-Trace:
+      - a2_a172c952-0831-4b38-8dd7-14ea60d7731c-20404-24738507
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method,SOAPAction
+      Access-Control-Allow-Methods:
+      - PUT,OPTIONS,POST,GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cnection:
+      - close
+      Content-Length:
+      - '375'
+      Date:
+      - Wed, 23 Jan 2019 21:47:51 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48dXBkYXRlQ3VzdG9tZXJQYXltZW50UHJvZmlsZVJlc3BvbnNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zPSJBbmV0QXBpL3htbC92MS9zY2hlbWEvQW5ldEFwaVNjaGVtYS54c2QiPjxtZXNzYWdlcz48cmVzdWx0Q29kZT5PazwvcmVzdWx0Q29kZT48bWVzc2FnZT48Y29kZT5JMDAwMDE8L2NvZGU+PHRleHQ+U3VjY2Vzc2Z1bC48L3RleHQ+PC9tZXNzYWdlPjwvbWVzc2FnZXM+PC91cGRhdGVDdXN0b21lclBheW1lbnRQcm9maWxlUmVzcG9uc2U+
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 21:47:51 GMT
+- request:
+    method: post
+    uri: https://apitest.authorize.net/xml/v1/request.api
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <createCustomerProfileTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+          <merchantAuthentication>
+            <name>a</name>
+            <transactionKey>b</transactionKey>
+          </merchantAuthentication>
+          <transaction>
+            <profileTransAuthOnly>
+              <amount>5.0</amount>
+              <customerProfileId>1813877793</customerProfileId>
+              <customerPaymentProfileId>1808588673</customerPaymentProfileId>
+              <order>
+                <invoiceNumber>5c48e105987b47c0bac1</invoiceNumber>
+              </order>
+            </profileTransAuthOnly>
+          </transaction>
+          <extraOptions>
+            <![CDATA[x_duplicate_window=0]]>
+          </extraOptions>
+        </createCustomerProfileTransactionRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/xml; charset=utf-8
+      X-Opnet-Transaction-Trace:
+      - a2_23d718fd-f5f2-4530-862c-f27db0135530-14504-24747002
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method,SOAPAction
+      Access-Control-Allow-Methods:
+      - PUT,OPTIONS,POST,GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Cnection:
+      - close
+      Content-Length:
+      - '703'
+      Date:
+      - Wed, 23 Jan 2019 21:47:52 GMT
+      Connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Y3JlYXRlQ3VzdG9tZXJQcm9maWxlVHJhbnNhY3Rpb25SZXNwb25zZSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxucz0iQW5ldEFwaS94bWwvdjEvc2NoZW1hL0FuZXRBcGlTY2hlbWEueHNkIj48bWVzc2FnZXM+PHJlc3VsdENvZGU+T2s8L3Jlc3VsdENvZGU+PG1lc3NhZ2U+PGNvZGU+STAwMDAxPC9jb2RlPjx0ZXh0PlN1Y2Nlc3NmdWwuPC90ZXh0PjwvbWVzc2FnZT48L21lc3NhZ2VzPjxkaXJlY3RSZXNwb25zZT4xLDEsMSxUaGlzIHRyYW5zYWN0aW9uIGhhcyBiZWVuIGFwcHJvdmVkLiw4NU03OVEsWSw2MDExNTU2NTg0NCw1YzQ4ZTEwNTk4N2I0N2MwYmFjMSwsNS4wMCxDQyxhdXRoX29ubHksLEJlbixDcm91c2UsLDIyIHMuIDNyZCBzdC4sUGhpbGFkZWxwaGlhLFBBLDE5MTA2LFVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSwsLHVzZXJAd29ya2FyZWEuY29tLCwsLCwsLCwsLCwsLCw3M0M0NjIwOTRCNzE5RUU1QTg1N0E4RkY3NTlBREVGNCxQLDIsLCwsLCwsLCwsLFhYWFgxMTExLFZpc2EsLCwsLCwsLCwsLCwsLCwsLDwvZGlyZWN0UmVzcG9uc2U+PC9jcmVhdGVDdXN0b21lclByb2ZpbGVUcmFuc2FjdGlvblJlc3BvbnNlPg==
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 21:47:52 GMT
+recorded_with: VCR 2.9.3

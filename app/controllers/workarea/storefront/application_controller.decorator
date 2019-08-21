@@ -1,0 +1,10 @@
+module Workarea
+  decorate Storefront::ApplicationController, with: :forter do
+
+    def current_order
+      super.tap do |order|
+        order.forter_tracking_code = cookies[:forterToken]
+      end
+    end
+  end
+end

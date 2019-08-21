@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.forter-secure.com/v2/orders/fortertest1234
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"fortertest1234","orderType":"WEB","timeSentToForter":1547750772000,"checkoutTime":1547750769,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","city":"Philadelphia","country":"US","address2":"Second Floor","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"totalAmount":{"amountUSD":"11.00"},"connectionInformation":{"customerIP":"127.0.0.1","userAgent":"Mozilla/5.0
+        (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0 Mozilla/5.0
+        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0.","forterTokenCookie":"123ABC"},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
+        0","deliveryPrice":{"amountUSD":"1.00"},"carrier":null},"cartItems":[{"basicItemData":{"name":"Test
+        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"570407A9E8"}}],"payment":[{"tokenizedCard":{"token":"1","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2020","cardBrand":"Visa","nameOnCard":"Ben
+        Crouse"},"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","address2":"Second Floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"},"totalDiscount":null}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Forter-Siteid:
+      - 4d12ac5d794c
+      Api-Version:
+      - '2.3'
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Jan 2019 18:46:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '172'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=86400; includeSubDomains
+      Surrogate-Control:
+      - no-store
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Etag:
+      - W/"ac-GGRkLVdiK2WOgMdRJxFj/EJ+PqI"
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","transaction":"fortertest1234","action":"approve","message":"
+        | Link in portal: https://portal.forter.com/dashboard/fortertest1234","reasonCode":"Test"}'
+    http_version: 
+  recorded_at: Thu, 17 Jan 2019 18:46:13 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,34 @@
+module Workarea
+  decorate SaveUserOrderDetails, with: :forter do
+    def save_payment_details(order, user)
+      payment = Payment.find_or_initialize_by(id: order.id)
+      payment_profile = Payment::Profile.lookup(PaymentReference.new(user))
+      billing_address = extract_address_attributes(payment.address)
+
+      if billing_address.present?
+        user.auto_save_billing_address(billing_address)
+
+        if user.public_info.blank?
+          user.update_attributes!(
+            first_name: billing_address[:first_name],
+            last_name: billing_address[:last_name]
+          )
+        end
+      end
+
+      if payment.credit_card? && !payment.credit_card.saved?
+        payment_profile.credit_cards.create(
+          first_name: payment.credit_card.first_name,
+          last_name: payment.credit_card.last_name,
+          display_number: payment.credit_card.display_number,
+          issuer: payment.credit_card.issuer,
+          month: payment.credit_card.month,
+          year: payment.credit_card.year,
+          token: payment.credit_card.token,
+          default: payment_profile.credit_cards.none?,
+          bin: payment.credit_card.bin
+        )
+      end
+    end
+  end
+end

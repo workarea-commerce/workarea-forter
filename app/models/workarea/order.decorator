@@ -1,0 +1,14 @@
+module Workarea
+  decorate Order, with: :forter do
+    decorated do
+      field :forter_tracking_code, type: String
+    end
+
+    def flagged_for_fraud?
+      decision = Workarea::Forter::Decision.find(id) rescue nil
+      return false unless decision.present? && decision.response.present?
+
+      decision.response.action == 'decline'
+    end
+  end
+end

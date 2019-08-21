@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://esqa.moneris.com/gateway2/servlet/MpgRequest
+    body:
+      encoding: UTF-8
+      string: "<request><store_id>monca02501</store_id><api_token>a</api_token><res_add_cc><pan>4111111111111111</pan><expdate>2001</expdate><crypt_type>7</crypt_type></res_add_cc></request>"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Jan 2019 19:59:18 GMT
+      X-Ua-Compatible:
+      - IE=Edge
+      Connection:
+      - close
+      Content-Type:
+      - text/html
+      Set-Cookie:
+      - TS019df888=015d06d254e5db4e34fe7382a887444547ca59aa133884da759843adf1cee9f7b6e3eef24c920b6b3c86a167df8b97ad3dd05b4f04;
+        Path=/; Domain=.esqa.moneris.com
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0"?><response><receipt><DataKey>3piwwVoMYsDgDRhEWTUInGsz1</DataKey><ReceiptId>null</ReceiptId><ReferenceNum>null</ReferenceNum><ResponseCode>001</ResponseCode><ISO>null</ISO><AuthCode>null</AuthCode><Message>Successfully
+        registered CC details.</Message><TransTime>14:59:18</TransTime><TransDate>2019-01-23</TransDate><TransType>null</TransType><Complete>true</Complete><TransAmount>null</TransAmount><CardType>null</CardType><TransID>null</TransID><TimedOut>false</TimedOut><CorporateCard>null</CorporateCard><RecurSuccess>null</RecurSuccess><AvsResultCode>null</AvsResultCode><CvdResultCode>null</CvdResultCode><ResSuccess>true</ResSuccess><PaymentType>cc</PaymentType><IsVisaDebit>null</IsVisaDebit><ResolveData><cust_id></cust_id><phone></phone><email></email><note></note><crypt_type>7</crypt_type><masked_pan>4111***1111</masked_pan><expdate>2001</expdate></ResolveData></receipt></response>
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 19:59:18 GMT
+- request:
+    method: post
+    uri: https://esqa.moneris.com/gateway2/servlet/MpgRequest
+    body:
+      encoding: UTF-8
+      string: "<request><store_id>monca02501</store_id><api_token>a</api_token><res_preauth_cc><data_key>3piwwVoMYsDgDRhEWTUInGsz1</data_key><order_id>5c48c795987b476a6dc19b85_2019_01_23_14_59_18</order_id><amount>5.00</amount><crypt_type>7</crypt_type></res_preauth_cc></request>"
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Jan 2019 19:59:18 GMT
+      X-Ua-Compatible:
+      - IE=Edge
+      Connection:
+      - close
+      Content-Type:
+      - text/html
+      Set-Cookie:
+      - TS019df888=015d06d25439017653fe641fc169766fb46ba638f87435601b56acf7c0e9535a0410c87ccf0fd330d9b256fcdb4cc3947b1bd21f7a;
+        Path=/; Domain=.esqa.moneris.com
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0"?><response><receipt><DataKey>3piwwVoMYsDgDRhEWTUInGsz1</DataKey><ReceiptId>5c48c795987b476a6dc19b85_2019_01_23_14_59_18</ReceiptId><ReferenceNum>660189810010070060</ReferenceNum><ResponseCode>027</ResponseCode><ISO>01</ISO><AuthCode>464215</AuthCode><Message>APPROVED           *                    =</Message><TransTime>14:59:18</TransTime><TransDate>2019-01-23</TransDate><TransType>01</TransType><Complete>true</Complete><TransAmount>5.00</TransAmount><CardType>V</CardType><TransID>130-0_12</TransID><TimedOut>false</TimedOut><CorporateCard>false</CorporateCard><RecurSuccess>null</RecurSuccess><AvsResultCode>null</AvsResultCode><CvdResultCode>null</CvdResultCode><ResSuccess>true</ResSuccess><PaymentType>cc</PaymentType><IsVisaDebit>false</IsVisaDebit><ResolveData><cust_id></cust_id><phone></phone><email></email><note></note><expdate>2001</expdate><masked_pan>4111***1111</masked_pan><crypt_type>7</crypt_type><avs_street_number></avs_street_number><avs_street_name></avs_street_name><avs_zipcode></avs_zipcode></ResolveData></receipt></response>
+    http_version:
+  recorded_at: Wed, 23 Jan 2019 19:59:19 GMT
+recorded_with: VCR 2.9.3

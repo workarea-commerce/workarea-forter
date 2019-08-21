@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://pilot-payflowpro.paypal.com/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><XMLPayRequest Timeout="60" version="2.1"
+        xmlns="http://www.paypal.com/XMLPay"><RequestData><Vendor>wlplugins</Vendor><Partner>PayPal</Partner><Transactions><Transaction
+        CustRef=""><Verbosity>MEDIUM</Verbosity><Authorization><PayData><Invoice><InvNum>5c48e5ea987b47d3031dc7f7</InvNum><BillTo><Name>Ben
+        Crouse</Name><Address><Street>22 s. 3rd st.</Street><City>Philadelphia</City><State>PA</State><Country>US</Country><Zip>19106</Zip></Address></BillTo><TotalAmt
+        Currency="USD">5.00</TotalAmt></Invoice><Tender><Card><CardType>Visa</CardType><CardNum>4111111111111111</CardNum><ExpDate>202001</ExpDate><NameOnCard>Ben</NameOnCard><CVNum>999</CVNum><ExtData
+        Name="LASTNAME" Value="Crouse"/></Card></Tender></PayData></Authorization></Transaction></Transactions></RequestData><RequestAuth><UserPass><User>a</User><Password>b</Password></UserPass></RequestAuth></XMLPayRequest>
+    headers:
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '926'
+      X-Vps-Client-Timeout:
+      - '60'
+      X-Vps-Vit-Integration-Product:
+      - ActiveMerchant
+      X-Vps-Vit-Runtime-Version:
+      - 2.4.2
+      X-Vps-Request-Id:
+      - 6917b5a2a61e2b865556323d14b6d8bf
+      Connection:
+      - close
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - close
+      Server:
+      - VPS-3.033.00
+      X-Vps-Request-Id:
+      - 6917b5a2a61e2b865556323d14b6d8bf
+      Date:
+      - Wed, 23 Jan 2019 22:08:43 GMT
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '785'
+    body:
+      encoding: UTF-8
+      string: <XMLPayResponse  xmlns="http://www.paypal.com/XMLPay"><ResponseData><Vendor>wlplugins</Vendor><Partner>paypal</Partner><TransactionResults><TransactionResult><Result>0</Result><ProcessorResult><AVSResult>Y</AVSResult><CVResult>X</CVResult><HostCode>A</HostCode></ProcessorResult><FraudPreprocessResult><Message>No
+        Rules Triggered</Message></FraudPreprocessResult><FraudPostprocessResult><Message>No
+        Rules Triggered</Message></FraudPostprocessResult><IAVSResult>N</IAVSResult><AVSResult><StreetMatch>Match</StreetMatch><ZipMatch>Match</ZipMatch></AVSResult><CVResult>Service
+        Not Available</CVResult><Message>Approved</Message><PNRef>A70AABA79D6A</PNRef><AuthCode>195PNI</AuthCode><VisaCardLevel>12</VisaCardLevel></TransactionResult></TransactionResults></ResponseData></XMLPayResponse>
+    http_version: 
+  recorded_at: Wed, 23 Jan 2019 22:08:44 GMT
+recorded_with: VCR 2.9.3

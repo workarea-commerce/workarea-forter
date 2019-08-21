@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.forter-secure.com/v2/orders/statusfortertest12345
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"statusfortertest12345","orderType":"WEB","timeSentToForter":1546030401000,"checkoutTime":1546030397,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","city":"Philadelphia","country":"US","address2":"Second Floor","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"totalAmount":{"amountUSD":"11.00"},"connectionInformation":{"customerIP":"127.0.0.1","userAgent":"Mozilla/5.0
+        (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0 Mozilla/5.0
+        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0."},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
+        0","deliveryPrice":{"amountUSD":"1.00"},"carrier":null},"cartItems":[{"basicItemData":{"name":"Test
+        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"BCE0E155EF"}}],"payment":[{"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","address2":"Second Floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"tokenizedCard":{"token":"1","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2019","cardBrand":"Visa","nameOnCard":"Ben
+        Crouse"}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Api-Version:
+      - '2.2'
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 28 Dec 2018 20:53:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '58'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=86400; includeSubDomains
+      Surrogate-Control:
+      - no-store
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Etag:
+      - W/"3a-ZqDAtEqlVbaEf6c/ziI5qiLtZfk"
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"status":"failed","message":"unauthorized, invalid site"}'
+    http_version: 
+  recorded_at: Fri, 28 Dec 2018 20:53:21 GMT
+- request:
+    method: post
+    uri: https://api.forter-secure.com/v2/orders/statusfortertest12345
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"statusfortertest12345","orderType":"WEB","timeSentToForter":1546030401000,"checkoutTime":1546030397,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","city":"Philadelphia","country":"US","address2":"Second Floor","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"totalAmount":{"amountUSD":"11.00"},"connectionInformation":{"customerIP":"127.0.0.1","userAgent":"Mozilla/5.0
+        (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0 Mozilla/5.0
+        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0."},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
+        0","deliveryPrice":{"amountUSD":"1.00"},"carrier":null},"cartItems":[{"basicItemData":{"name":"Test
+        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"BCE0E155EF"}}],"payment":[{"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","address2":"Second Floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"tokenizedCard":{"token":"1","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2019","cardBrand":"Visa","nameOnCard":"Ben
+        Crouse"}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"}}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Forter-Siteid:
+      - 4d12ac5d794c
+      Api-Version:
+      - '2.2'
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Dec 2018 20:53:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '186'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=86400; includeSubDomains
+      Surrogate-Control:
+      - no-store
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Etag:
+      - W/"ba-Ef/isk7mEOWPRXN9i4trCjru7vk"
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","transaction":"statusfortertest12345","action":"approve","message":"
+        | Link in portal: https://portal.forter.com/dashboard/statusfortertest12345","reasonCode":"Test"}'
+    http_version: 
+  recorded_at: Fri, 28 Dec 2018 20:53:21 GMT
+- request:
+    method: put
+    uri: https://api.forter-secure.com/v2/status/statusfortertest12345
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"statusfortertest12345","eventTime":1546030401000,"updatedStatus":"CANCELED_BY_MERCHANT"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Forter-Siteid:
+      - 4d12ac5d794c
+      Api-Version:
+      - '2.2'
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Dec 2018 20:53:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '83'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=86400; includeSubDomains
+      Surrogate-Control:
+      - no-store
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Etag:
+      - W/"53-bIIPJPDkazv+tEVJKCKU0pv7x9A"
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","message":"Transaction #statusfortertest12345 status
+        recieved"}'
+    http_version: 
+  recorded_at: Fri, 28 Dec 2018 20:53:21 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,10 @@
+module Workarea
+  decorate Storefront::OrderViewModelTest, with: :forter do
+
+    def set_order
+      @order = Order.new
+      Workarea::Forter::Decision.create(id: @order.id)
+
+    end
+  end
+end

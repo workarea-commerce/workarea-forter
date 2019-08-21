@@ -1,0 +1,14 @@
+module Workarea
+  decorate Payment::SavedCreditCard, with: :forter do
+    decorated do
+      field :bin, type: String
+      before_validation :set_bin
+    end
+
+    def set_bin
+      if number.present?
+        self.bin = ActiveMerchant::Billing::CreditCard.first_digits(number)
+      end
+    end
+  end
+end

@@ -1,0 +1,26 @@
+en:
+  workarea:
+    admin:
+      orders:
+        forter:
+          page_title: "%{id} Forter Fraud Decision"
+          title: Fraud Decision
+          review_reason: Decision Action
+          reason_code: Reason
+          status: Forter Order Status
+          console: View in Forter Admin
+          details_heading: Details
+          details_description: A list of decision responses returned from Forter
+          decision_error: No decision made, check response
+          error: Error
+          details:
+            action: Action
+            message: Message
+            reason_code: Reason Code
+            errors: Errors
+        cards:
+          forter:
+            title: 'Fraud Decision:'
+            decision: 'Decision Action:'
+            reason_code: 'Reason:'
+            status: 'Forter Order Status:'

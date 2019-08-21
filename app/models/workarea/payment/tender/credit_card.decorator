@@ -1,0 +1,25 @@
+module Workarea
+  decorate Payment::Tender::CreditCard, with: :forter do
+    decorated do
+      field :bin, type: String
+      before_validation :set_bin
+    end
+
+    def set_bin
+      if number.present?
+        self.bin = ActiveMerchant::Billing::CreditCard.first_digits(number)
+      end
+    end
+
+    def set_saved_card_values
+      if saved_card.present?
+        self.display_number = saved_card.display_number
+        self.issuer = saved_card.issuer
+        self.month = saved_card.month
+        self.year = saved_card.year
+        self.token = saved_card.token
+        self.bin = saved_card.bin
+      end
+    end
+  end
+end

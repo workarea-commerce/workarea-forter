@@ -1,0 +1,13 @@
+module Workarea
+  decorate Payment, with: :forter do
+    decorated do
+      field :flagged_for_fraud, type: Boolean, default: false
+    end
+
+    def rollback!(options = {})
+      transactions = tenders.flat_map(&:transactions)
+      operation = Workarea::Payment::Operation.new(transactions, options)
+      operation.rollback!
+    end
+  end
+end
