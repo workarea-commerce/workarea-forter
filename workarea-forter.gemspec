@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = "Forter Fraud Protection integration with Workarea"
   s.description = "Forter Integration with Workarea for Fraud Protection "
   s.files       = `git ls-files`.split("\n")
+  s.license = 'Business Software License'
 
   s.add_dependency 'workarea', '~> 3.x', '>= 3.4'
   s.add_dependency 'faraday'
