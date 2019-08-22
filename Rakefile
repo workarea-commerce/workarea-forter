@@ -34,15 +34,16 @@ desc "Release version #{Workarea::Forter::VERSION} of the gem"
 task :release do
   host = "https://#{ENV['BUNDLE_GEMS__WEBLINC__COM']}@gems.weblinc.com"
 
-  Rake::Task['workarea:changelog'].execute
-  system 'git add CHANGELOG.md'
-  system 'git commit -m "Update CHANGELOG"'
-  system 'git push origin HEAD'
+  #Rake::Task['workarea:changelog'].execute
+  #system 'git add CHANGELOG.md'
+  #system 'git commit -m "Update CHANGELOG"'
+  #system 'git push origin HEAD'
 
   system "git tag -a v#{Workarea::Forter::VERSION} -m 'Tagging #{Workarea::Forter::VERSION}'"
   system 'git push --tags'
 
   system "gem build workarea-forter.gemspec"
+  system "gem push workarea-forter-#{Workarea::Forter::VERSION}.gem"
   system "gem push workarea-forter-#{Workarea::Forter::VERSION}.gem --host #{host}"
   system "rm workarea-forter-#{Workarea::Forter::VERSION}.gem"
 end
