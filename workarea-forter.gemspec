@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Workarea::Forter::VERSION
   s.authors     = ["Jeff Yucis"]
   s.email       = ["jyucis@weblinc.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/workarea-commerce/workarea-forter"
   s.summary     = "Forter Fraud Protection integration with Workarea"
   s.description = "Forter Integration with Workarea for Fraud Protection "
   s.files       = `git ls-files`.split("\n")
