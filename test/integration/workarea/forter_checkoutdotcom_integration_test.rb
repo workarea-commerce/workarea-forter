@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Workarea
-  class ForterAuthorizeCimResponseCodeIntegrationTest < Workarea::IntegrationTest
+  class ForterCheckoutdotcomIntegrationTest < Workarea::IntegrationTest
     if Workarea::Plugin.installed?(:Checkoutdotcom)
       include ForterApiConfig
       include CheckoutdotcomGatewayVCRConfig
