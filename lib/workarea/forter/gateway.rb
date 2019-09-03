@@ -1,7 +1,6 @@
 module Workarea
   module Forter
     class Gateway
-
       attr_reader :options
 
       def initialize(options = {})

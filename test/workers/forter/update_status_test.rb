@@ -2,7 +2,6 @@ require 'test_helper'
 
 module Workarea
   class Forter::UpdateStatusTest < TestCase
-
     def test_decision_status_update
       decision = Workarea::Forter::Decision.create(id: '1234')
 
