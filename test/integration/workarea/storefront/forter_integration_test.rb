@@ -3,7 +3,6 @@ require 'test_helper'
 module Workarea
   module Storefront
     class ForterIntegrationTest < Workarea::IntegrationTest
-
       def test_decision_approved
         complete_checkout("approved@workarea.com", 'W3blinc1')
 

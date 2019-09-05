@@ -2,7 +2,6 @@ require 'test_helper'
 module Workarea
   class Payment
     class ForterCreditCardTest < TestCase
-
       def credit_card
         @credit_card ||= Workarea::Payment::Tender::CreditCard.new
       end

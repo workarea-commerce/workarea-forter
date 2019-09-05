@@ -2,7 +2,6 @@ module Workarea
   module Forter
     module Tender
       class Paypal
-
         class PaypalDependencyError < StandardError; end
         attr_reader :tender, :options
 

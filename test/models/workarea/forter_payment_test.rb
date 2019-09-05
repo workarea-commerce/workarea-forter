@@ -2,7 +2,6 @@ require 'test_helper'
 
 module Workarea
     class ForterPaymentTest < TestCase
-
     def response
       ActiveMerchant::Billing::Response.new(
         true,
