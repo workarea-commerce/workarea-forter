@@ -20,6 +20,6 @@ group :test do
   when 'cyber_source'
     gem 'workarea-cyber_source'
   when 'checkoutdotcom'
-    gem 'workarea-checkoutdotcom'
+    gem 'workarea-checkoutdotcom', source: 'https://gems.weblinc.com'
   end
 end
