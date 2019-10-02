@@ -19,7 +19,8 @@ module Workarea
               expirationMonth: cc_month(tender.month),
               expirationYear: tender.year.to_s,
               cardBrand: tender.issuer,
-              nameOnCard: "#{address.first_name} #{address.last_name}"
+              nameOnCard: "#{address.first_name} #{address.last_name}",
+              paymentGatewayData: payment_gateway_data
             }.merge!(verification_results)
           }
         end
@@ -66,6 +67,15 @@ module Workarea
           def forter_authorization_code
             gateway_class = Workarea.config.gateways.credit_card.class.to_s
             Workarea.config.forter.response_code[gateway_class].call(transaction) rescue nil
+          end
+
+          def payment_gateway_data
+            return unless tender.transactions.present? && transaction.present?
+
+            {
+              gatewayName: Workarea::Forter.config.credit_card_gateway_name || "not specified",
+              gatewayTransactionId: transaction.response.authorization.to_s
+            }
           end
       end
     end

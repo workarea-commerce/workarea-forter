@@ -61,6 +61,12 @@ You can specify which version of the API via configuration:
 
 If no API version is configured the default of **2.2** will be used.
 
+Setting a configuration value for ```credit_card_gateway_name``` value will improve the decision accuracy. This is the name of the credit card processor used by the host application.
+
+```ruby
+  Workarea.config.forter.credit_card_gateway_name = "Stripe"
+```
+
 Implementation Notes
 --------------------------------------------------------------------------------
 **Verifcation Data**
