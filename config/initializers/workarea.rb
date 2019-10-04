@@ -10,6 +10,8 @@ Workarea.configure do |config|
   config.forter.api_timeout = 2
   config.forter.open_timeout = 2
 
+  config.forter.credit_card_gateway_name = nil # name of payment gateway used, ie. Stripe
+
   config.forter.response_code = {
     'ActiveMerchant::Billing::StripeGateway' => -> (transaction) { transaction.params['failure_code'] },
     'ActiveMerchant::Billing::BraintreeBlueGateway' => -> (transaction) { transaction.response.params["braintree_transaction"]["processor_response_code"] },
