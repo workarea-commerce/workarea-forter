@@ -5,7 +5,7 @@ Workarea.configure do |config|
   config.forter = ActiveSupport::Configurable::Configuration.new
   config.forter.site_id = nil
 
-  config.forter.api_version = "2.2"
+  config.forter.api_version = "2.3"
 
   config.forter.api_timeout = 2
   config.forter.open_timeout = 2
