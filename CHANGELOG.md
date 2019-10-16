@@ -1,3 +1,25 @@
+Workarea Forter 1.2.4 (2019-10-16)
+--------------------------------------------------------------------------------
+
+*   Set default Forter API version to 2.3
+
+    API version 2.3 allows for the general payment option, which
+    allows users to pass payment types that are not explicitly supported
+    by Forter.
+    Jeff Yucis
+
+*   Add additional data to forter credit card tender data.
+
+    Adds the gateway name and transaction ID to the credit card
+    information sent to forter when making a decision.
+    Jeff Yucis
+
+*   Update README
+
+    Matt Duffy
+
+
+
 Workarea Forter 1.2.3 (2019-09-17)
 --------------------------------------------------------------------------------
 
