@@ -1,0 +1,24 @@
+module Workarea
+  decorate Checkout, with: :forter do
+
+    # Forter has a post auth model of fraud analysis
+    # This decorator removes the check for fraud.
+    def place_order
+      return false unless complete?
+      return false unless shippable?
+      return false unless payable?
+
+      inventory.purchase
+      return false unless inventory.captured?
+
+      unless payment_collection.purchase
+        inventory.rollback
+        return false
+      end
+
+      result = order.place
+      place_order_side_effects if result
+      result
+    end
+  end
+end

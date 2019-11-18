@@ -1,7 +1,0 @@
-module Workarea
-  decorate Admin::OrderViewModel, with: :forter do
-    def decision
-      @decision = Workarea::Forter::Decision.find(model.id) rescue nil
-    end
-  end
-end

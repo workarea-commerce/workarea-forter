@@ -4,23 +4,20 @@ module Workarea
       collect_result = super
 
       begin
-        decision = Forter::Decision.find_or_create_by(id: @order.id)
-        order_hash = Forter::Order.new(@order).to_h
-
-        response = get_decision(@order_id, order_hash, decision)
+        fraud_analyzer.decide!
 
         # Rollback all transactions if the original collection
         # was successful but the forter decision was a decline.
-        if collect_result && response.suspected_fraud?
+        if collect_result && @order.fraud_suspected?
           payment.rollback!
-          payment.flagged_for_fraud = true
+          payment.fraud_suspected = true
 
           payment.save!
           false
         else
           # need to re-add errors indicating the payment operation failed
           error_messages = payment.errors.messages.clone
-          payment.update_attribute(:flagged_for_fraud, false)
+          payment.update_attribute(:fraud_suspected, false)
           error_messages.each do |attribute, message|
             payment.errors.add(attribute, message)
           end
@@ -30,46 +27,13 @@ module Workarea
       rescue => e
         Forter.log_error(e)
         return collect_result
-      ensure
-        decision.save!
       end
     end
 
     private
 
-      ERROR_STATUSES = 500..599
-      MAX_RETRIES = 2
-
-      # Gets forter decision and builds decision responses on the Forter Decision
-      # model
-      #
-      # @raises Error
-      #
-      # @return [Workarea::Forter::DecisionResponse] response
-      #
-      def get_decision(order_id, order_hash, decision)
-        count = 1
-        begin
-          fraud_response = Forter.gateway.create_decision(@order.id, order_hash)
-          body = JSON.parse(fraud_response.body)
-          response = Forter::DecisionResponse.new(body)
-
-          decision.responses.build(decision_response: response)
-          raise if ERROR_STATUSES.include? fraud_response.status
-
-          response
-        rescue => error
-          decision.responses.build(
-            timed_out: error.is_a?(Faraday::Error::TimeoutError),
-            error: error.message
-          )
-          if count < MAX_RETRIES
-            count += 1
-            retry
-          else
-            raise error
-          end
-        end
-      end
+    def fraud_analyzer
+      @fraud_analyzer ||= Workarea.config.fraud_analyzer.constantize.new(@checkout)
+    end
   end
 end

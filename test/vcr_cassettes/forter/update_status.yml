@@ -5,85 +5,26 @@ http_interactions:
     uri: https://api.forter-secure.com/v2/orders/statusfortertest12345
     body:
       encoding: UTF-8
-      string: '{"orderId":"statusfortertest12345","orderType":"WEB","timeSentToForter":1546030401000,"checkoutTime":1546030397,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+      string: '{"orderId":"statusfortertest12345","orderType":"WEB","timeSentToForter":1574090964000,"checkoutTime":1574090960,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
         S. 3rd St.","city":"Philadelphia","country":"US","address2":"Second Floor","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"totalAmount":{"amountUSD":"11.00"},"connectionInformation":{"customerIP":"127.0.0.1","userAgent":"Mozilla/5.0
         (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0 Mozilla/5.0
-        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0."},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
+        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0.","forterTokenCookie":"123ABC"},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
         0","deliveryPrice":{"amountUSD":"1.00"},"carrier":null},"cartItems":[{"basicItemData":{"name":"Test
-        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"BCE0E155EF"}}],"payment":[{"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
-        S. 3rd St.","address2":"Second Floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"tokenizedCard":{"token":"1","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2019","cardBrand":"Visa","nameOnCard":"Ben
-        Crouse"}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Api-Version:
-      - '2.2'
-      User-Agent:
-      - Faraday v0.15.4
-      Authorization:
-      - Basic a
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Fri, 28 Dec 2018 20:53:21 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '58'
-      Connection:
-      - keep-alive
-      Server:
-      - openresty
-      Strict-Transport-Security:
-      - max-age=86400; includeSubDomains
-      Surrogate-Control:
-      - no-store
-      Cache-Control:
-      - no-store, no-cache, must-revalidate, proxy-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Etag:
-      - W/"3a-ZqDAtEqlVbaEf6c/ziI5qiLtZfk"
-      Vary:
-      - Accept-Encoding
-    body:
-      encoding: UTF-8
-      string: '{"status":"failed","message":"unauthorized, invalid site"}'
-    http_version: 
-  recorded_at: Fri, 28 Dec 2018 20:53:21 GMT
-- request:
-    method: post
-    uri: https://api.forter-secure.com/v2/orders/statusfortertest12345
-    body:
-      encoding: UTF-8
-      string: '{"orderId":"statusfortertest12345","orderType":"WEB","timeSentToForter":1546030401000,"checkoutTime":1546030397,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
-        S. 3rd St.","city":"Philadelphia","country":"US","address2":"Second Floor","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"totalAmount":{"amountUSD":"11.00"},"connectionInformation":{"customerIP":"127.0.0.1","userAgent":"Mozilla/5.0
-        (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0 Mozilla/5.0
-        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0."},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
-        0","deliveryPrice":{"amountUSD":"1.00"},"carrier":null},"cartItems":[{"basicItemData":{"name":"Test
-        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"BCE0E155EF"}}],"payment":[{"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
-        S. 3rd St.","address2":"Second Floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"tokenizedCard":{"token":"1","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2019","cardBrand":"Visa","nameOnCard":"Ben
-        Crouse"}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"}}'
+        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"BE6FEF44CE"}}],"payment":[{"creditCard":{"bin":"411111","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2020","cardBrand":"Visa","nameOnCard":"Ben
+        Crouse","paymentGatewayData":{"gatewayName":"not specified","gatewayTransactionId":"53433"},"verificationResults":{"avsFullResult":"","cvvResult":"","authorizationCode":"53433","processorResponseText":"Bogus
+        Gateway: Forced success","processorResponseCode":""}},"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"12
+        N. 3rd St.","address2":"thrid floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"amount":{"amountUSD":"11.00"}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"},"totalDiscount":null}'
     headers:
       Content-Type:
       - application/json
       X-Forter-Siteid:
       - 4d12ac5d794c
       Api-Version:
-      - '2.2'
+      - '2.3'
       User-Agent:
       - Faraday v0.15.4
       Authorization:
-      - Basic a
+      - Basic ODZmMjFiZWU3ZTNiMmU1MWY2YTk5NmIxZTYxNTFmOTA4ZDY1ZWQ0Zjo=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -94,7 +35,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 28 Dec 2018 20:53:21 GMT
+      - Mon, 18 Nov 2019 15:29:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -122,13 +63,21 @@ http_interactions:
       string: '{"status":"success","transaction":"statusfortertest12345","action":"approve","message":"
         | Link in portal: https://portal.forter.com/dashboard/statusfortertest12345","reasonCode":"Test"}'
     http_version: 
-  recorded_at: Fri, 28 Dec 2018 20:53:21 GMT
+  recorded_at: Mon, 18 Nov 2019 15:29:28 GMT
 - request:
-    method: put
-    uri: https://api.forter-secure.com/v2/status/statusfortertest12345
+    method: post
+    uri: https://api.forter-secure.com/v2/orders/statusfortertest12345
     body:
       encoding: UTF-8
-      string: '{"orderId":"statusfortertest12345","eventTime":1546030401000,"updatedStatus":"CANCELED_BY_MERCHANT"}'
+      string: '{"orderId":"statusfortertest12345","orderType":"WEB","timeSentToForter":1574090968000,"checkoutTime":1574090968,"primaryRecipient":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"22
+        S. 3rd St.","city":"Philadelphia","country":"US","address2":"Second Floor","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"totalAmount":{"amountUSD":"11.00"},"connectionInformation":{"customerIP":"127.0.0.1","userAgent":"Mozilla/5.0
+        (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0 Mozilla/5.0
+        (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0.","forterTokenCookie":"123ABC"},"primaryDeliveryDetails":{"deliveryType":"PHYSICAL","deliveryMethod":"Test
+        0","deliveryPrice":{"amountUSD":"1.00"},"carrier":null},"cartItems":[{"basicItemData":{"name":"Test
+        Product","quantity":2,"type":"TANGIBLE","price":{"amountUSD":"10.00"},"productId":"BE6FEF44CE"}}],"payment":[{"creditCard":{"bin":"411111","lastFourDigits":"1111","expirationMonth":"01","expirationYear":"2020","cardBrand":"Visa","nameOnCard":"Ben
+        Crouse","paymentGatewayData":{"gatewayName":"not specified","gatewayTransactionId":"53433"},"verificationResults":{"avsFullResult":"","cvvResult":"","authorizationCode":"53433","processorResponseText":"Bogus
+        Gateway: Forced success","processorResponseCode":""}},"billingDetails":{"personalDetails":{"firstName":"Ben","lastName":"Crouse"},"address":{"address1":"12
+        N. 3rd St.","address2":"thrid floor","city":"Philadelphia","country":"US","zip":"19106","region":"PA"},"phone":[{"phone":""}]},"amount":{"amountUSD":"11.00"}}],"accountOwner":{"firstName":"Ben","lastName":"Crouse","email":"approve@forter.com"},"totalDiscount":null}'
     headers:
       Content-Type:
       - application/json
@@ -139,7 +88,7 @@ http_interactions:
       User-Agent:
       - Faraday v0.15.4
       Authorization:
-      - Basic a
+      - Basic ODZmMjFiZWU3ZTNiMmU1MWY2YTk5NmIxZTYxNTFmOTA4ZDY1ZWQ0Zjo=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -150,7 +99,63 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 28 Dec 2018 20:53:21 GMT
+      - Mon, 18 Nov 2019 15:29:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '186'
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Strict-Transport-Security:
+      - max-age=86400; includeSubDomains
+      Surrogate-Control:
+      - no-store
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, proxy-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Etag:
+      - W/"ba-Ef/isk7mEOWPRXN9i4trCjru7vk"
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"status":"success","transaction":"statusfortertest12345","action":"approve","message":"
+        | Link in portal: https://portal.forter.com/dashboard/statusfortertest12345","reasonCode":"Test"}'
+    http_version: 
+  recorded_at: Mon, 18 Nov 2019 15:29:37 GMT
+- request:
+    method: put
+    uri: https://api.forter-secure.com/v2/status/statusfortertest12345
+    body:
+      encoding: UTF-8
+      string: '{"orderId":"statusfortertest12345","eventTime":1574090977000,"updatedStatus":"CANCELED_BY_MERCHANT"}'
+    headers:
+      Content-Type:
+      - application/json
+      X-Forter-Siteid:
+      - 4d12ac5d794c
+      Api-Version:
+      - '2.2'
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Basic ODZmMjFiZWU3ZTNiMmU1MWY2YTk5NmIxZTYxNTFmOTA4ZDY1ZWQ0Zjo=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Nov 2019 15:29:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -178,5 +183,5 @@ http_interactions:
       string: '{"status":"success","message":"Transaction #statusfortertest12345 status
         recieved"}'
     http_version: 
-  recorded_at: Fri, 28 Dec 2018 20:53:21 GMT
+  recorded_at: Mon, 18 Nov 2019 15:29:38 GMT
 recorded_with: VCR 2.9.3

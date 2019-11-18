@@ -4,7 +4,7 @@ module Workarea
       include Sidekiq::Worker
 
       def perform(id, status_hash)
-        decision = Workarea::Forter::Decision.find(id) rescue nil
+        decision = Workarea::Order.find(id).fraud_decision rescue nil
 
         if decision.blank?
           Rails.logger.warn "No decision record found for #{id} during update status"

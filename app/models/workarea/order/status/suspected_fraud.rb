@@ -1,13 +1,7 @@
 module Workarea
-  class Order
-    module Status
-      class SuspectedFraud
-        include StatusCalculator::Status
-
-        def in_status?
-          !order.placed? && order.flagged_for_fraud? && !order.canceled?
-        end
-      end
+  decorate Order::Status::SuspectedFraud, with: :forter do
+    def in_status?
+      super && !order.placed? && !order.canceled?
     end
   end
 end

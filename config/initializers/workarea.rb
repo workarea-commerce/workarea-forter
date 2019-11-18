@@ -2,6 +2,8 @@ Workarea.configure do |config|
   config.order_status_calculators.insert(0, 'Workarea::Order::Status::SuspectedFraud')
   config.payment_status_calculators.insert(0, 'Workarea::Payment::Status::SuspectedFraud')
 
+  config.fraud_analyzer = 'Workarea::Checkout::Fraud::ForterAnalyzer'
+
   config.forter = ActiveSupport::Configurable::Configuration.new
   config.forter.site_id = nil
 

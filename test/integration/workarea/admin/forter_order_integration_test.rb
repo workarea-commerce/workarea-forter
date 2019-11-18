@@ -15,15 +15,15 @@ module Workarea
       def test_shows_error_decision
         order = create_placed_forter_order(email: 'error@workarea.com')
 
-        get admin.forter_order_path(order)
-        message = Workarea::Forter::Decision.first.response.errors.first["message"]
+        get admin.fraud_order_path(order)
+        message = order.fraud_decision.response.errors.first["message"]
         assert(response.body.include?(message))
       end
 
-      def test_returns_flow_order_details
+      def test_returns_forter_order_details
         order = create_placed_forter_order(email: 'approve@workarea.com')
-        decision = Workarea::Forter::Decision.find(order.id)
-        get admin.forter_order_path(order)
+        decision = order.fraud_decision
+        get admin.fraud_order_path(order)
 
         assert(response.body.include?(decision.response.body_message))
         assert(response.body.include?(decision.response.action))

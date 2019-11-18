@@ -5,7 +5,7 @@ module Workarea
         include Workarea::StatusCalculator::Status
 
         def in_status?
-          order.flagged_for_fraud?
+          order.fraud_suspected?
         end
       end
     end
