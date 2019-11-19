@@ -1,4 +1,4 @@
-- @page_title = t('workarea.admin.orders.forter.page_title', id: @order.id)
+- @page_title = t('workarea.admin.orders.fraud.title', id: @order.id)
 
 .view
   .view__header
@@ -11,7 +11,7 @@
         = render_aux_navigation_for(@order)
 
   .view__container
-    = render_cards_for(@order, :forter)
+    = render_cards_for(@order, :fraud)
 
   .view__container.view__container--narrow
     .grid
@@ -21,7 +21,7 @@
 
         %li
           %strong= t('workarea.admin.orders.forter.status')
-          = @order.decision.external_order_status
+          = @order.fraud_decision.external_order_status
         %li
           %br
           %strong= link_to t('workarea.admin.orders.forter.console'), "https://portal.forter.com/dashboard/#{@order.id}"
@@ -41,7 +41,7 @@
               %th= t('workarea.admin.orders.forter.error')
 
           %tbody
-            - @order.decision.responses.each do |response|
+            - @order.fraud_decision.responses.each do |response|
               %tr
                 %td= response.fraud_decision_action
                 %td= response.decision_response&.body_message
@@ -51,7 +51,4 @@
                     - response.decision_response.errors.each do |e|
                       %li= e["message"]
                 %td= response.error
-
-
-
 

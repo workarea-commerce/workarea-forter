@@ -1,6 +1,0 @@
-module Workarea
-  decorate Admin::OrdersController, with: :forter do
-    def fraud
-    end
-  end
-end

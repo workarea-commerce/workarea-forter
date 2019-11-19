@@ -1,0 +1,16 @@
+module Workarea
+  decorate CheckoutTest, with: :forter do
+    def test_place_order_fails_for_fraud
+      @order.email = 'decline@workarea.com'
+      checkout = Checkout.new(@order)
+
+      checkout.expects(:complete?).returns(true)
+      checkout.expects(:shippable?).returns(true)
+      checkout.expects(:payable?).returns(true)
+      checkout.inventory.expects(:purchase).once
+
+      refute(checkout.place_order)
+      refute(@order.reload.placed?)
+    end
+  end
+end

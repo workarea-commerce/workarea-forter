@@ -1,0 +1,13 @@
+module Workarea
+  decorate Order::FraudDecision, with: :forter do
+    decorated do
+      embeds_many :responses, class_name: 'Workarea::Forter::Response'
+      field :external_order_status, type: String, default: "PROCESSING"
+    end
+
+    def response
+      return if responses.empty?
+      responses.sort_by { |r| r.created_at.to_i }.last.decision_response
+    end
+  end
+end

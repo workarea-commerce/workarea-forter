@@ -1,7 +1,7 @@
 module Workarea
   decorate Search::Admin::Order, with: :forter do
     def should_be_indexed?
-      model.placed? || model.flagged_for_fraud?
+      model.placed? || model.fraud_suspected?
     end
   end
 end

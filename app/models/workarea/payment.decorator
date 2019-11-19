@@ -1,7 +1,7 @@
 module Workarea
   decorate Payment, with: :forter do
     decorated do
-      field :flagged_for_fraud, type: Boolean, default: false
+      field :fraud_suspected, type: Boolean, default: false
     end
 
     def rollback!(options = {})

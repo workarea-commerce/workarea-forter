@@ -1,0 +1,12 @@
+module Workarea
+  decorate Admin::OrdersSystemTest, with: :forter do
+    def test_fraud
+      order = create_placed_forter_order(email: 'decline@workarea.com')
+      visit admin.order_path(order)
+      click_link t('workarea.admin.orders.attributes.fraud.title')
+
+      assert(page.has_content?('decline')) # decision
+      assert(page.has_content?(order.fraud_decision.message))
+    end
+  end
+end

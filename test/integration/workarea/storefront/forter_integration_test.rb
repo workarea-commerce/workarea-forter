@@ -9,13 +9,13 @@ module Workarea
         order = Workarea::Order.last
         payment = Workarea::Payment.last
 
-        decision = Workarea::Forter::Decision.find(order.id)
+        order.reload
+        decision = order.fraud_decision
 
         refute(decision.response.suspected_fraud?)
 
-        order.reload
-        refute(order.flagged_for_fraud?)
-        refute(payment.flagged_for_fraud?)
+        refute(order.fraud_suspected?)
+        refute(payment.fraud_suspected?)
       end
 
       def test_decision_not_reviewed
@@ -24,9 +24,10 @@ module Workarea
 
         order = Workarea::Order.last
         payment = Workarea::Payment.last
-        decision = Workarea::Forter::Decision.find(order.id)
 
-        refute(payment.flagged_for_fraud?)
+        decision = order.fraud_decision
+
+        refute(payment.fraud_suspected?)
         refute(decision.response.suspected_fraud?)
       end
 
@@ -35,7 +36,9 @@ module Workarea
         complete_checkout("decline@workarea.com", 'W3blinc1')
 
         order = Workarea::Order.last
-        decision = Workarea::Forter::Decision.find(order.id)
+
+        decision = order.fraud_decision
+
         assert(decision.response.suspected_fraud?)
 
         payment = Workarea::Payment.last
@@ -43,13 +46,12 @@ module Workarea
 
         assert(transaction.cancellation.present?)
 
-        order.reload
         payment.reload
 
-        assert(order.flagged_for_fraud?)
+        assert(order.fraud_suspected?)
         assert_equal(:suspected_fraud, order.status)
 
-        assert(payment.flagged_for_fraud?)
+        assert(payment.fraud_suspected?)
         assert_equal(:suspected_fraud, payment.status)
       end
 
@@ -59,9 +61,10 @@ module Workarea
 
         order = Workarea::Order.last
         payment = Workarea::Payment.last
-        decision = Workarea::Forter::Decision.find(order.id)
 
-        refute(payment.flagged_for_fraud?)
+        decision = order.fraud_decision
+
+        refute(payment.fraud_suspected?)
         refute(decision.response.suspected_fraud?)
         assert(decision.response.errors.present?)
       end

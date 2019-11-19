@@ -16,7 +16,7 @@ module Workarea
         VCR.use_cassette("forter/get_decision", match_requests_on: [:method, :uri]) do
           order = create_placed_forter_order(id: "fortertest1234", email: "approve@forter.com")
 
-          forter_decision = Forter::Decision.find order.id
+          forter_decision = order.fraud_decision
           response = forter_decision.responses.first
           assert response.decision_response.success?
         end
@@ -30,7 +30,6 @@ module Workarea
 
           response = gateway.create_decision(order.id, hsh)
           assert(response.success?)
-
 
           hsh = {
             orderId: order.id,
