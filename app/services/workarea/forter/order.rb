@@ -57,8 +57,8 @@ module Workarea
         end
 
         def delivery_type
-          return "DIGITAL" if order.items.all? { |oi| !oi.requires_shipping? }
-          return "HYBRID" if order.items.any? { |oi| !oi.requires_shipping? }
+          return "DIGITAL" if order.items.none?(&:shipping?)
+          return "HYBRID" if order.items.any?(&:shipping?)
           "PHYSICAL"
         end
 
@@ -74,7 +74,7 @@ module Workarea
               basicItemData: {
                 name: item.product.name,
                 quantity: item.quantity,
-                type: item.requires_shipping? ? "TANGIBLE" : "NON_TANGIBLE",
+                type: item.shipping? ? "TANGIBLE" : "NON_TANGIBLE",
                 price: { amountUSD: item.total_value.to_s },
                 productId: item.product.id
               }
