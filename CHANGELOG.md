@@ -1,3 +1,14 @@
+Workarea Forter 1.3.0 (2019-11-26)
+--------------------------------------------------------------------------------
+
+*   V3.5 compatability updates
+
+    Update to make the plugin compatible with the 3.5 fraud
+    framework. Moves the decision to post auth.
+    Jeff Yucis
+
+
+
 Workarea Forter 1.2.4 (2019-10-16)
 --------------------------------------------------------------------------------
 
