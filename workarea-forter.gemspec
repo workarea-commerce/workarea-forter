@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split("\n")
   s.license = 'Business Software License'
 
-  s.add_dependency 'workarea', '~> 3.x', '>= 3.4'
+  s.add_dependency 'workarea', '~> 3.x', '>= 3.5'
   s.add_dependency 'faraday'
 end
