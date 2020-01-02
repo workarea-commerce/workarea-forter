@@ -84,6 +84,16 @@ module Workarea
         hsh = Forter::Order.new(order).to_h
         assert_equal('1234', hsh[:totalDiscount][:couponCodeUsed])
       end
+
+      def test_to_h_transactionless_tender
+        order = create_placed_order(id: '1234')
+        payment = Workarea::Payment.find('1234')
+        tender = payment.tenders.first
+        tender.transactions = []
+
+        hsh = Forter::Order.new(order).to_h
+        assert_equal(0, hsh[:payment].size)
+      end
     end
   end
 end
