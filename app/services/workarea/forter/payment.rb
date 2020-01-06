@@ -10,7 +10,7 @@ module Workarea
 
       # @return Array
       def to_a
-        payment.tenders.map do | tender|
+        payment_tenders.map do | tender|
 
           tender_hash = build_tender_details(tender)
 
@@ -62,18 +62,8 @@ module Workarea
           }
         end
 
-        def credit_used
-          tender = payment.tenders.detect { |t| t.slug == :store_credit }
-          return {} unless tender.present?
-          {
-            creditUsed: {
-              amountUSD: tender.amount.to_s
-            }
-          }
-        end
-
-        def cc_month(month)
-          month < 10 ? "0#{month}" : month.to_s
+        def payment_tenders
+          payment.tenders.reject { |t| t.transactions.empty? }
         end
     end
   end
