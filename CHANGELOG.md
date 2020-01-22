@@ -1,3 +1,16 @@
+Workarea Forter 1.3.2 (2020-01-21)
+--------------------------------------------------------------------------------
+
+*   Fix Tests for 2020
+
+    Update all tests so that they no longer depend on the year 2020 as an
+    expiration year. Instead, use the  method provided by Workarea.
+
+    FORTER-2
+    Tom Scott
+
+
+
 Workarea Forter 1.3.1 (2020-01-07)
 --------------------------------------------------------------------------------
 
